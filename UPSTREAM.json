@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/next1foreal-dotcom/creative-components",
+  "revision": "3ff64a171b53b11d6d79e7bb11d499ba5e55f1cf",
+  "checkedAt": "2026-10-26",
+  "lineEndings": "Text copies normalized to LF; source content retained",
+  "parts": {
+    "thinking-effort": "Zombie scene, spring slider, voice, SFX and web-component renderer",
+    "clawd-perch/clawd-engine.js": "Canvas Clawd animation engine"
+  },
+  "runtimePatch": "scripts/vendor-patches.json",
+  "desktopArtwork": "See docs/desktop-artwork-manifest.json; SVG files not included"
+}

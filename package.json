@@ -1,0 +1,16 @@
+{
+  "name": "clawd-thinking-component",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Clawd thinking effort slider, adapted for Whisper; noncommercial use",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node --check src/clawd-thinking.js",
+    "test": "node tests/browser.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

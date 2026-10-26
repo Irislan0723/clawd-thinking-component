@@ -1,0 +1,43 @@
+{
+  "upstreamCommit": "3ff64a171b53b11d6d79e7bb11d499ba5e55f1cf",
+  "upstreamSha256": "d2486f5edffae9d95674bef884bd6d4415f8e79b11bd41a1248dc504cfdd359a",
+  "runtimeSha256": "5b6f4b0c3acc25aa7ebf019c9ccb90a5689815a776e6e69e06a75e93a4386bd3",
+  "replacements": [
+    [
+      "\"Brainless\"",
+      "\"晕乎乎\""
+    ],
+    [
+      "\"The zombie got it. Slide right to grow it back.\"",
+      "\"Clawd 被咬懵了，向右滑就能恢复\""
+    ],
+    [
+      "\"Recommended\"",
+      "\"推荐\""
+    ],
+    [
+      "\"Reset\"",
+      "\"重置\""
+    ],
+    [
+      "function Ct(){let A=null,q=null,V=null",
+      "function Ct(context){let A=context||null,q=null,V=null"
+    ],
+    [
+      "A||(A=new i,q=A.createGain(),q.gain.value=r.vol,q.connect(A.destination))",
+      "A||(A=new i),q||(q=A.createGain(),q.gain.value=r.vol,q.connect(A.destination))"
+    ],
+    [
+      "e.voice||(e.voice=Ct())",
+      "e.voice||(e.voice=Ct(e.audioContext))"
+    ],
+    [
+      "u&&oe(),!(u&&i)",
+      "u&&e.touched&&oe(),!(u&&i)"
+    ],
+    [
+      "let Bq=z?Wq:A[K]||A[0]",
+      "r0(()=>{const root=hA.current;const activate=event=>{if(!e.sound&&!e.sfx)return;if(!e.voice)e.audioContext=event.detail&&event.detail.context;LA();if(e.sayTimer)clearTimeout(e.sayTimer);e.sayTimer=0;e.said=e.target;const target=e.target,voice=e.voice;Promise.all(((e.urls&&e.urls[rA(target)])||[]).map(line=>voice.load(line.url))).then(()=>{if(root.isConnected&&e.sound&&e.voice===voice&&e.target===target){e.said=-1;e.fled=false;j()}});j()};root.addEventListener(\"effort-audio-activate\",activate);return()=>root.removeEventListener(\"effort-audio-activate\",activate)},[]);let Bq=z?Wq:A[K]||A[0]"
+    ]
+  ]
+}

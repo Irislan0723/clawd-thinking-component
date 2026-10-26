@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-26",
+  "currentDesktopRepoRevision": "ea846be1182ed387cde628b28f53244edc840ce5",
+  "currentOfficialArtworkLicenseUrl": "https://raw.githubusercontent.com/rullerzhou-afk/clawd-on-desk/ea846be1182ed387cde628b28f53244edc840ce5/assets/LICENSE",
+  "currentOfficialArtworkLicenseSha256": "9b718644846eb2c2098eec0c12f8f8cf78ab89b9dec11d7e3987b18f0d280482",
+  "redistributionPermissionRecorded": false,
+  "artwork": [
+    {
+      "pose": "sleep",
+      "filename": "clawd-sleeping.svg",
+      "sourceProject": "https://github.com/rullerzhou-afk/clawd-on-desk",
+      "originalLocalSha256": "34865eef411c17f480e893271157600d65bedfea3b61e87f76abed30823ebf36",
+      "whisperFramedSha256": "67474c1533120139f5b163c1b72b13764de4d2e168184dfbc9fe512b1cc2226e",
+      "includedInPublicPackage": false,
+      "notes": "Origin recorded from the existing Whisper integration; original artwork revision is not asserted"
+    },
+    {
+      "pose": "think",
+      "filename": "clawd-working-thinking.svg",
+      "sourceProject": "https://github.com/rullerzhou-afk/clawd-on-desk",
+      "originalLocalSha256": "be414727e9dd7434e4ed387616e12ba31f71890476eedb74667252d5ff29fa00",
+      "whisperFramedSha256": "e0193418ddaa4ed0811c43424d219558181779baf6a992545205f3809e18b18b",
+      "includedInPublicPackage": false,
+      "notes": "Origin recorded from the existing Whisper integration; original artwork revision is not asserted"
+    },
+    {
+      "pose": "ultra",
+      "filename": "clawd-working-ultrathink.svg",
+      "sourceProject": "https://github.com/rullerzhou-afk/clawd-on-desk",
+      "originalLocalSha256": "a981c721b776242d22e359fd9c2b35d80c1851754cf0d233a8d0a04e67eb4fdd",
+      "whisperFramedSha256": "cd826f65b3acf0b01c68260b69b5d301c317f291f7c3e7ab021dc55bf39dd926",
+      "includedInPublicPackage": false,
+      "notes": "Origin recorded from the existing Whisper integration; original artwork revision is not asserted"
+    },
+    {
+      "pose": "dizzy",
+      "filename": "clawd-dizzy.svg",
+      "sourceProject": "https://github.com/rullerzhou-afk/clawd-on-desk",
+      "originalLocalSha256": "bc09961d9c0670a7e688204582067264d69e1a2c542aff8f93563264f93824e4",
+      "whisperFramedSha256": "ed261d2f820d903165e47bb80f5106ab19813379c5990b7cb5fed3f46d189bb5",
+      "includedInPublicPackage": false,
+      "notes": "Origin recorded from the existing Whisper integration; original artwork revision is not asserted"
+    }
+  ]
+}

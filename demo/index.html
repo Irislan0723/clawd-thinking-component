@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clawd Thinking — Whisper Remix</title>
+<link rel="stylesheet" href="../src/clawd-thinking.css">
+<style>
+  :root{color-scheme:light;--page:#f4f1eb;--ink:#292925;--outline:#29292525;--surface:#fff8}
+  :root[data-theme=dark]{color-scheme:dark;--page:#232421;--ink:#eeeae2;--outline:#eeeae240;--surface:#ffffff0a}
+  *{box-sizing:border-box}body{margin:0;min-height:100svh;background:var(--page);color:var(--ink);font:15px/1.7 system-ui,sans-serif}
+  header{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1000px;margin:auto;padding:30px 24px}
+  .wordmark{font:italic 27px Georgia,serif;letter-spacing:-1px}button,select{font:inherit;color:inherit;background:transparent;border:1px solid var(--outline);border-radius:999px;padding:7px 14px;cursor:pointer}
+  main{max-width:940px;margin:55px auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+  .eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.6}h1{font:normal 48px/1.1 Georgia,serif;margin:12px 0 24px}p{opacity:.75}code{font-size:12px}a{color:inherit;text-underline-offset:4px}
+  .settings{padding-top:12px;max-width:440px}.settings h2{font:normal 28px Georgia,serif;margin:0 0 22px}.meta{font-size:11px;opacity:.55;margin-top:30px}#status{min-height:40px;font-size:12px;opacity:.6;margin-top:20px}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}.controls button{font-size:12px}.preview-space{min-height:250px}
+  @media(max-width:680px){header{padding:22px}main{margin:22px auto;grid-template-columns:1fr;gap:22px}h1{font-size:40px}.intro p{font-size:13px}}
+</style>
+<header><span class="wordmark">whisper remix</span><button id="theme" type="button">Dark / Light</button></header>
+<main>
+  <div class="intro">
+    <div class="eyebrow">Clawd Thinking · Noncommercial remix</div>
+    <h1>A little thought,<br>a little Clawd</h1>
+    <p>让思考强度变得有一点可爱</p>
+    <p>低档打瞌睡，中档翻资料，高档认真想，最大档闪闪发光<br>在最低档继续往左拉，或者点点僵尸，试试看</p>
+    <p class="meta">独立演示使用 Creative Components 的 Canvas 动画<br>桌宠版 SVG 未包含在公开包中，来源与授权区别见 README</p>
+    <a href="../README.md">接入与来源说明</a>
+  </div>
+  <div class="settings">
+    <h2>Thinking effort</h2>
+    <div class="controls"><button type="button" id="toggle">Hide</button><button type="button" id="fail">模拟保存失败</button><button type="button" id="capabilities">切换模型档位</button></div>
+    <div class="preview-space" id="component"></div>
+    <div id="status" role="status">当前设置 · auto</div>
+    <p class="meta">Based on <a href="https://github.com/next1foreal-dotcom/creative-components">Creative Components</a> · FeiFei / @nextoneforeal<br>Clawd is Anthropic’s character · Unofficial fan adaptation</p>
+  </div>
+</main>
+<script type="module">
+import {createClawdThinking} from '../src/clawd-thinking.js';
+let failure=false,open=true,narrow=false;
+const status=document.querySelector('#status');
+const control=createClawdThinking(document.querySelector('#component'),{
+  value:'auto',levels:['low','medium','high','xhigh','max'],storageKey:'clawd-thinking-demo-sound',theme:'light',
+  async onChange(value){await new Promise(resolve=>setTimeout(resolve,120));if(failure){failure=false;throw Error('演示保存失败，已恢复原来的档位')}status.textContent='当前设置 · '+value},
+  onError(error){status.textContent=error.message}
+});
+document.querySelector('#toggle').onclick=()=>{open=!open;if(open)void control.show();else control.hide();document.querySelector('#toggle').textContent=open?'Hide':'Show'};
+document.querySelector('#theme').onclick=()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;control.setTheme(theme)};
+document.querySelector('#fail').onclick=()=>{failure=true;status.textContent='下一次修改将模拟保存失败'};
+document.querySelector('#capabilities').onclick=()=>{narrow=!narrow;void control.setLevels(narrow?['low','medium','high']:['low','medium','high','xhigh','max']);status.textContent='模型支持 · '+(narrow?'low / medium / high':'low / medium / high / xhigh / max')};
+window.demo={control,get failure(){return failure},set failure(value){failure=value}};
+</script>
+</html>
